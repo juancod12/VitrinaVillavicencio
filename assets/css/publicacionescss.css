@@ -1,0 +1,114 @@
+/* =====================================
+   Estilos para el cascarón de carritos y productos
+   
+   ===================================== */
+
+/* Card de carrito */
+.cart-card {
+    margin-bottom: 20px;
+}
+
+/* Imagen del carrito */
+.cart-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    background-color: #e9ecef; /* Placeholder mientras no hay imagen */
+}
+
+/* Card de producto */
+.product-card {
+    margin-bottom: 10px;
+}
+
+/* Imagen del producto */
+.product-image {
+    width: 100%;
+    height: 150px; /* ajusta la altura que quieras */
+    background-size: cover;
+    background-position: center;
+    border-radius: 0.25rem 0.25rem 0 0; /* opcional, para bordes redondeados */
+}
+
+.cart-image {
+    width: 100%;
+    height: 200px; /* ajusta según necesites */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    padding: 10px 10px 0 10px; /* arriba, derecha, abajo, izquierda */
+    border-radius: 8px; /* opcional, que coincida con la card */
+    object-fit: cover;  /* para que la imagen mantenga proporción */
+
+}
+
+/* =====================================
+   Estilos para Carritos y Productos
+   ===================================== */
+
+/* Card general con sombra */
+.card {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* Imagen del carrito como fondo */
+.card > .row > .col-md-4 {
+    position: relative;
+    padding: 20px 20px 20px 20px; /* arriba, derecha, abajo, izquierda */
+    border-radius: 8px; /* opcional, que coincida con la card */
+    object-fit: cover;  /* para que la imagen mantenga proporción */
+
+}
+
+.card > .row > .col-md-4 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* La imagen llena todo el espacio */
+    border-radius: 12px 0 0 12px; /* Bordes redondeados solo del lado izquierdo */
+}
+
+/* Productos dentro del carrito */
+.product-card .card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Imagen del producto como fondo */
+.product-card .card-img-top {
+    height: 150px;
+    object-fit: cover; /* La imagen se ajusta */
+    
+}
+
+/* Ajuste del cuerpo de la card para flex */
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Botón al final de la card */
+.btn {
+    border-radius: 8px;
+}
+/*titulo de publicaciones */
+h2.publicaciones-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem; /* Ajusta el tamaño */
+    font-weight: 700; /* Opcional: más gruesa */
+    color: #333; /* Color del texto */
+}

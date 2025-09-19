@@ -1,54 +1,54 @@
+<?php
+// Incluir la lógica
+require_once 'api/transacciones/pago.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gestión de Transacciones</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Pagar con Nequi</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- referencia de stylos-->
+    <link rel="stylesheet" href="assets/css/transaccionescss.css">
 </head>
-<body>
-  <div class="container py-5">
-    <h1 class="mb-4">Transacciones</h1>
-    <a href="index.php" class="btn btn-secondary mb-3">⬅ Volver al inicio</a>
+<body class="bg-light">
+<div class="container py-5">
+    <h1 class="fw-bold fs-1 mb-4">Formulario de Pago</h1>
 
-    <div class="card shadow">
-      <div class="card-body">
-        <h5 class="card-title">Listado de Transacciones</h5>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Usuario</th>
-              <th>Monto</th>
-              <th>Fecha</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody id="tabla-transacciones"></tbody>
-        </table>
-      </div>
-    </div>
-  </div>
+    <!-- Formulario -->
+    <form method="POST" class="card p-4 shadow-sm bg-white">
+        <div class="mb-3">
+            <label class="form-label">Teléfono (Nequi):</label>
+            <input type="text" name="phoneNumber" class="form-control" required>
+        </div>
 
-  <script>
-    fetch("api/transacciones/listar.php")
-      .then(res => res.json())
-      .then(data => {
-        let tbody = document.getElementById("tabla-transacciones");
-        data.forEach(t => {
-          tbody.innerHTML += `
-            <tr>
-              <td>${t.id}</td>
-              <td>${t.usuario}</td>
-              <td>${t.monto}</td>
-              <td>${t.fecha}</td>
-              <td>
-                <button class="btn btn-sm btn-warning">Editar</button>
-                <button class="btn btn-sm btn-danger">Eliminar</button>
-              </td>
-            </tr>`;
-        });
-      });
-  </script>
+        <div class="mb-3">
+            <label class="form-label">Monto:</label>
+            <input type="number" name="amount" class="form-control" required step="1000" min="1000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Referencia:</label>
+            <input type="text" name="reference" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-success">Pagar</button>
+    </form>
+
+    <!-- Resultado del pago -->
+    <?php if($result): ?>
+        <div class="mt-4 card p-3 shadow-sm">
+            <h4>Resultado del pago</h4>
+            <?php if(isset($result['status']) && $result['status'] == "success"): ?>
+                <p class="text-success">¡Pago realizado con éxito!</p>
+                <p>Referencia: <?php echo htmlspecialchars($result['reference']); ?></p>
+            <?php else: ?>
+                <p class="text-danger">Hubo un error en el pago.</p>
+                <pre><?php print_r($result); ?></pre>
+            <?php endif; ?>
+        </div>
+    <?php endif; ?>
+</div>
 </body>
 </html>
