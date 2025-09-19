@@ -1,0 +1,79 @@
+/* Fondo general */
+body {
+    background-image: url('../img/fondotransacciones.png'); /* Ruta de tu imagen */
+    background-size: cover;     /* Ajusta la imagen al tamaño de la pantalla */
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* Contenedor principal */
+.container {
+    max-width: 600px;
+}
+
+/* Card del formulario */
+form.card {
+    border-radius: 12px;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+form.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Labels y campos */
+.form-label {
+    font-weight: 600;
+    color: #495057;
+}
+
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    padding: 10px 12px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+    border-color: #198754;
+    box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
+}
+
+/* Botón */
+.btn-success {
+    background-color: #198754;
+    border-color: #198754;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-success:hover {
+    background-color: #157347;
+    transform: translateY(-2px);
+}
+
+/* Card de resultado */
+.mt-4.card {
+    border-radius: 12px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.text-success {
+    font-weight: 600;
+    color: #198754 !important;
+}
+
+.text-danger {
+    font-weight: 600;
+    color: #dc3545 !important;
+}
