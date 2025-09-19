@@ -19,6 +19,11 @@ $page = $_GET['page'] ?? 'home';
       </button>
       <div class="collapse navbar-collapse" id="menu">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+  <a class="nav-link <?= $page=='perfil_emprendedor'?'active':'' ?>" href="index.php?page=perfil_emprendedor">
+    Perfil Emprendedor
+  </a>
+</li>
           <li class="nav-item"><a class="nav-link <?= $page=='clientes'?'active':'' ?>" href="index.php?page=clientes">Clientes</a></li>
           <li class="nav-item"><a class="nav-link <?= $page=='emprendedores'?'active':'' ?>" href="index.php?page=emprendedores">Emprendedores</a></li>
           <li class="nav-item"><a class="nav-link <?= $page=='eventos'?'active':'' ?>" href="index.php?page=eventos">Eventos</a></li>
@@ -63,6 +68,10 @@ $page = $_GET['page'] ?? 'home';
         default:
             include 'views/home.php';
             break;
+        case 'perfil_emprendedor':
+            include 'views/perfil_emprendedor.php';
+        break;
+
     }
     ?>
   </div>
