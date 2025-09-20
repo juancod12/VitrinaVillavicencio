@@ -92,7 +92,7 @@
         cartContainer.appendChild(cartCard);
 
         // Insertar productos
-        const productsContainer = cartCard.querySelector(`#products-${cart.title.replace(/\s/g,'')}`);
+        const productsContainer = cartCard.querySelector(#products-${cart.title.replace(/\s/g,'')});
         cart.products.forEach(product => {
             const productCard = document.createElement('div');
             productCard.classList.add('col-md-4', 'mb-3');
